@@ -1,0 +1,32 @@
+security:
+  jwt:
+    secret-sey: verysecretkeydonttellanybodyimserious
+
+spring:
+  application:
+    name: NewsFlow
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgresql-db:5432/news
+    username: postgres
+    password: 1234
+
+  jpa:
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+
+  sql:
+    init:
+      mode: always
+  
+  servlet:
+    multipart.max-file-size: 10000MB
+    multipart.max-request-size: 10000MB
+
+cloud:
+  firebase:
+    storage-bucket: start-8fcf1.appspot.com
+    service-access-key-path: /app/firebase/firebase.json

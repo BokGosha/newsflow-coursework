@@ -1,0 +1,30 @@
+.myModal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.myModalContent {
+    padding: 25px;
+    background: white;
+    min-width: 250px;
+    width: 60%;
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
+    border-radius: 25px;
+}
+
+.myModalContent::-webkit-scrollbar {
+    width: 0;
+}
+
+.myModal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
