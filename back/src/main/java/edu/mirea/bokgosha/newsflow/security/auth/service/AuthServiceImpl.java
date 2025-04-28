@@ -18,6 +18,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
+
     private final JwtIssuer jwtIssuer;
     private final AuthenticationManager authenticationManager;
     private final UserService userService;
@@ -35,6 +36,13 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public LoginResponse register(LoginRequest request) {
+        final String email = request.getUsername();
+        if (userService.userExistByEmail(email)) {
+            return LoginResponse.builder()
+                    .token(null)
+                    .build();
+        }
+
         userService.addUser(User.builder()
                 .username(request.getUsername())
                 .password(request.getPassword())

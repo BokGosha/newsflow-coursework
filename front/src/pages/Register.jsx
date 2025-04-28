@@ -32,15 +32,17 @@ const Register = () => {
             );
 
             if (response.status === 200) {
-                router("/auth/login");
+                if (response.data.token === null) {
+                    alert("Такой пользователь уже зарегистрирован!");
+                } else {
+                    router("/auth/login");
+                }
             } else {
                 setIsAuth(false);
 
-                alert("Такой пользователь уже зарегистрирован!");
+                alert("Ошибка регистрации!");
             }
         } catch (error) {
-            console.error(error);
-
             alert("Ошибка регистрации!");
         }
     };

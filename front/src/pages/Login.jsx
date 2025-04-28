@@ -30,8 +30,6 @@ const Login = () => {
             }
         } catch (error) {
             alert("Авторизация провалена!");
-
-            console.error(error);
         }
     };
 

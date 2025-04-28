@@ -36,20 +36,20 @@ public class NewsController {
     }
 
     @GetMapping("/{id}")
-    public NewsWithCommentsDto getPost(@AuthenticationPrincipal UserPrincipal userPrincipal,
+    public NewsWithCommentsDto getNews(@AuthenticationPrincipal UserPrincipal userPrincipal,
                                        @PathVariable Long id) {
         long userId = userPrincipal.getUserId();
         return newsService.getNews(id, userId);
     }
 
     @GetMapping
-    public List<NewsDto> getPosts(@AuthenticationPrincipal UserPrincipal userPrincipal) {
+    public List<NewsDto> getAllNews(@AuthenticationPrincipal UserPrincipal userPrincipal) {
         long userId = userPrincipal.getUserId();
         return newsService.getAllNews(userId);
     }
 
     @DeleteMapping("/{id}")
-    public NewsDto deletePost(@PathVariable Long id) {
+    public NewsDto deleteNews(@PathVariable Long id) {
         return newsService.removeNews(id);
     }
 
