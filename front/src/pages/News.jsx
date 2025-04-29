@@ -14,6 +14,7 @@ function News() {
         sort: "",
         query: "",
         showOnlyUser: false,
+        showOnlyLiked: false,
     });
     const [modal, setModal] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -40,11 +41,16 @@ function News() {
 
             const userMatch =
                 !filter.showOnlyUser || news.author === user.username;
+            
+            const likedMatch =
+                !filter.showOnlyLiked || news.liked === true;
 
-            return searchMatch && userMatch;
+            return searchMatch && likedMatch && userMatch;
         });
-    }, [filter.query, filter.showOnlyUser, sortedNews]);
+    }, [filter.query, filter.showOnlyUser, filter.showOnlyLiked, sortedNews]);
 
+    console.log(sortedAndSearchedNews);
+    
     const totalPages = Math.ceil(sortedAndSearchedNews.length / itemsPerPage);
 
     const createNews = (news) => {

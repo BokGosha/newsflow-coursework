@@ -42,6 +42,24 @@ const NewsFilter = ({ user, filter, setFilter }) => {
                     >
                         Показывать только мои новости
                     </label>
+                    <input
+                        type="checkbox"
+                        id="filter-checkbox"
+                        checked={filter.showOnlyLiked}
+                        onChange={(e) =>
+                            setFilter({
+                                ...filter,
+                                showOnlyLiked: e.target.checked,
+                            })
+                        }
+                        className="filter-checkbox-input"
+                    />
+                    <label
+                        htmlFor="filter-checkbox"
+                        className="filter-checkbox-label"
+                    >
+                        Показывать только понравившиеся новости
+                    </label>
                 </div>
             )}
         </div>
