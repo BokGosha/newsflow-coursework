@@ -8,9 +8,9 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgresql-db:5432/news
-    username: postgres
-    password: 1234
+    url: jdbc:postgresql://dpg-d0ib7dvfte5s73fp66b0-a:5432/news_5nd6
+    username: news_5nd6_user
+    password: iMPXjZ9rl7wToE0luOkVT9CSETgvIUxI
 
   jpa:
     open-in-view: false
