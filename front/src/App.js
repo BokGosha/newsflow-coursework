@@ -6,7 +6,8 @@ import MyHeader from "./components/Header";
 import { AuthContext } from "./context";
 import AuthService from "./services/AuthService";
 
-axios.defaults.baseURL = "https://44.225.181.72:8080/";
+axios.defaults.baseURL =
+    "https://https://newsflow-coursework-backend.onrender.com/";
 
 function App() {
     const [isAuth, setIsAuth] = useState(AuthService.getToken !== null);
