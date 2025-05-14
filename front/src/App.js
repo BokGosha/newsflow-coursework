@@ -7,7 +7,7 @@ import { AuthContext } from "./context";
 import AuthService from "./services/AuthService";
 
 axios.defaults.baseURL =
-    "https://https://newsflow-coursework-backend.onrender.com/";
+    "https://newsflow-coursework-backend.onrender.com/";
 
 function App() {
     const [isAuth, setIsAuth] = useState(AuthService.getToken !== null);
